@@ -1,7 +1,7 @@
  <%= simple_form_for @item do |f| %>
 
 	<%= f.input :title, label: "Task", placeholder: "Add Task" %>
-	<%= f.input :description, placeholder: "Describe what you need to accomplish!" %>
+	<%= f.input :description, placeholder: "Describe what you need to accomplish!", input_html: {rows: 5} %>
 	<%= f.button :submit, class: "btn btn-info" %>
-	
+
 <% end %>

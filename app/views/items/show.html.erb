@@ -1,15 +1,18 @@
 <div class="col col-md-6 col-md-offset-3">
+	
 	<div class="panel panel-info">
-		
 		<div class="panel-heading">
-			<h1><%= @item.title %></h1>
+			<h2><%= @item.title %></h2>
 		</div>
 
 		<div class="panel-body">
 			<p><%= @item.description %></p>
 		</div>
-
 	</div>
+
+	<%= link_to "Edit Task", edit_item_path(@item) %>
+	<%= link_to "All Tasks", items_path %>
+	<%= link_to "Delete Task", item_path, method: :delete, data: {confirm: "Are you sure?"} %>
 	
 </div>
 

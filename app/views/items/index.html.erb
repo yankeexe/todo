@@ -1,13 +1,15 @@
-<div class="col-md-5 col-md-offset-2">
-	<h1>Your Items</h1>
+<% if user_signed_in? %>
+	<div class="col-md-6 col-md-offset-2">
+		<h1>Your Items</h1>
 
-	<% @items.each do |item| %>
-		<h2><%= link_to item.title, item %></h2> 
-		<p><%= time_ago_in_words(item.created_at) %></p>
-		<p><%= truncate(item.description,length: 50) %></p> 
-	<% end %>
-	
-	<%= button_to "Create Item", new_item_path, class: "btn btn-primary", method: :get %>
-</div>
-
+		<% @items.each do |item| %>
+			<h2><%= link_to item.title, item %></h2> 
+			<p><%= time_ago_in_words(item.created_at) %></p>
+			<p><%= truncate(item.description,length: 50) %></p> 
+		<% end %>
+		
+	</div>
+<% else %>
+	<%= render 'shared/welcome' %>
+<% end %>
 
